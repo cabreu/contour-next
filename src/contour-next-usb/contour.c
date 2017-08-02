@@ -61,10 +61,13 @@ ContourRet contour_init(Contour *c)
 			continue;
 		}
 
-		if (   CONTOUR_NEXT_VENDOR_ID  == devinfo.vendor 
-		    && CONTOUR_NEXT_PRODUCT_ID == devinfo.product
-                    || CONTOUR_USB_VENDOR_ID   == devinfo.vendor
-                    && CONTOUR_USB_PRODUCT_ID  == devinfo.product) {
+		if (   ( CONTOUR_NEXT_VENDOR_ID  == devinfo.vendor 
+		    && CONTOUR_NEXT_PRODUCT_ID == devinfo.product )
+                    || ( CONTOUR_USB_VENDOR_ID   == devinfo.vendor
+                    && CONTOUR_USB_PRODUCT_ID  == devinfo.product )
+                    || ( CONTOUR_NEXT_ONE_VENDOR_ID   == devinfo.vendor
+                    && CONTOUR_NEXT_ONE_PRODUCT_ID  == devinfo.product )
+            ) {
 		    	//INFO("Contour next found: '%s'", filename);
 			break;
 		}
